@@ -95,6 +95,45 @@ class App extends Component {
             />
           ) : ''}
         </div>
+
+        <style jsx>{`
+          .App {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+              "header secret"
+              "users-list repos-view";
+            min-height: 100vh;
+            background-color: #282c34;
+            color: whitesmoke;
+          }
+          .header {
+            grid-area: header;
+            font-size: calc(10px + .5vmin);
+          }
+          .users-list {
+            grid-area: users-list;
+          }
+          .users-list.swipe-out {
+            /* transform: translateX(-100%); */
+            position: relative;
+            opacity: .2;
+          }
+          .users-list.swipe-out:before {
+              position: absolute;
+              content: '';
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+          }
+          .repos-view {
+            grid-area: repos-view;
+          }
+          
+        `}</style>
       </div>
     );
   }

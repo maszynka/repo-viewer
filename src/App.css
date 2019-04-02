@@ -3,53 +3,11 @@ body {
   overflow: hidden;
 }
 
-.App {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-    "header secret"
-    "users-list repos-view";
-  
-  color: whitesmoke;
-}
-
-.App > * {
-  flex: 1; 
-}
-
 .header,
 .users-list,
 .repos-view,
 .secret {
   padding: calc(1rem + .5vmin);
-}
-
-.header {
-  grid-area: header;
-  font-size: calc(10px + .5vmin);
-  color: white;
-}
-.users-list {
-  grid-area: users-list;
-}
-
-.users-list.swipe-out {
-  /* transform: translateX(-100%); */
-  position: relative;
-  opacity: .2;
-}
-.users-list.swipe-out:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-.repos-view {
-  grid-area: repos-view;
 }
 
 a {
@@ -59,8 +17,4 @@ a {
 ul {
   list-style: none;
   padding: 0;
-}
-
-.user-repos__bio {
-  
 }

@@ -1,4 +1,4 @@
-To run please create .env file with:
+To run please create .env file (in root of project) with:
 `REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN=your-token-here`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

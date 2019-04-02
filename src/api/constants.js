@@ -29,12 +29,4 @@ query ($login: String!) {
   }
 }`
 
-export const TEST = `
-{
-  __type(name: "Query") {
-    name
-  }
-}`
-
-
 

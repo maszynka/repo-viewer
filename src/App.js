@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import {
   searchUser,
-  getUser,
-  test as testApi
+  getUser
 } from './api/requests'
-import { setupApi } from './api/api'
 import User from './ui/User'
 import UserRepos from './ui/UserRepos'
 
@@ -18,28 +16,6 @@ class App extends Component {
       usersList: true,
       userRepos: false
     },
-    token: {
-      fieldLabel: '',
-      value: null
-    }
-  }
-
-  onTokenSubmit = event => {
-    event.preventDefault();
-    console.log(event)
-    const token = event.target.elements[0].value
-    console.log(token)
-    setupApi(token);
-    testApi().then(()=>{
-      let newToken = Object.assign({}, this.state.token, {
-        value: token
-      })
-      this.setState({
-        value: newToken
-      })
-    }).catch(err=>{
-      console.log('probably token is wrong')  
-    });
   }
 
   onChange = event => {
@@ -66,6 +42,7 @@ class App extends Component {
   onUserClick = (event, login) => {
     getUser(login).then(
       user => {
+
         let {name, bio, repositories } = user.data.data.repositoryOwner
         repositories = repositories.nodes
 
@@ -105,15 +82,8 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <h1>Github repos explorer:</h1>
-          <input onChange={this.onChange} name="ghtoken" placeholder={`${!this.state.token.value ? 'Provide token in a field on the right' : 'Search for user'}`}></input>
+          <input onChange={this.onChange} placeholder="Search for user"></input>
         </header>
-        <div className="secret">
-          <form onSubmit={this.onTokenSubmit}>
-            <input onChange={this.onTokenChange} placeholder="provide github token"></input>
-            <button type="submit">Ok</button>
-          </form>
-          
-        </div>
         <div className={`users-list${!this.state.screensActive.usersList ? ' swipe-out' : ''}`}>
           {this.state.usersList}
         </div>

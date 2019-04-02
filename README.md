@@ -1,3 +1,6 @@
+To run please create .env file with:
+`REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN=your-token-here`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

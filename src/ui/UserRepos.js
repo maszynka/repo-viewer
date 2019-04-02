@@ -8,7 +8,7 @@ const UserRepos = ({ name, bio, repositories, hideScreen }) =>
   <p className={`user-repos__bio${!bio ? 'is-empty' : ''}`}>{bio}</p>
   <ul className="user-repos__list">
     { repositories.map( ({name, url}) =>
-      <li className="user-repos__list__item">
+      <li className="user-repos__list__item" key={url}>
             <a className="user-repos__list__item" href={url}>{name}</a>
       </li> 
     )}

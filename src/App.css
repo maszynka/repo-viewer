@@ -52,3 +52,15 @@ body {
   grid-area: repos-view;
 }
 
+a {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-repos__bio {
+  
+}

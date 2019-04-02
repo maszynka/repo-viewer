@@ -1,7 +1,7 @@
 import { SEARCH_USER, GET_USER } from './constants'
 import api from './api'
 
-export const searchUser = async searchString => api.post('', {
+export const searchUser = searchString => api.post('', {
   query: SEARCH_USER,
   variables: { searchString }
 })

@@ -17,7 +17,7 @@ query ($login: String!) {
     ... on User {
       name
       bio
-			repositories(first:10) {
+      repositories(first:10) {
         nodes {
           ... on Repository {
             name
@@ -28,5 +28,3 @@ query ($login: String!) {
     }
   }
 }`
-
-
